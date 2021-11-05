@@ -35,7 +35,7 @@ class JournalIndex extends React.Component {
     render() { 
         return ( 
             <div>
-                <JournalTable extracts={this.state.extracts} />
+                <JournalTable extracts={this.state.extracts} fetchExtracts={this.fetchExtracts} />
             </div>
          );
     }

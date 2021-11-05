@@ -4,6 +4,10 @@ import Login from './components/Auth/Login';
 import Journal from './components/Journal/JournalCreate';
 import Sharing from './components/Sharing/SharingCreate';
 import JournalIndex from './components/Journal/JournalIndex';
+import SharingIndex from './components/Sharing/SharingIndex';
+import LandingPage from './components/Home/LandingPage';
+import Homepage from './components/Home/Homepage';
+
 
 
 ////////Class Component//////
@@ -19,6 +23,10 @@ class App extends React.Component {
     console.log(this.state.sessionToken);
   }
 
+  protectedViews = () => {
+    return (localStorage.getItem('token') ? <Homepage token={this.state.sessionToken} />
+      : <LandingPage updateToken={this.updateToken} />)
+  }
   // clearToken = () => {
   //   localStorage.clear();
   //   this.setState({ sessionToken: clearToken });
@@ -26,13 +34,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Signup updateToken={this.updateToken} />
-        <Login updateToken={this.updateToken} />
-        <Journal />
-        <Sharing />
-        <JournalIndex />
-      </div>);
-  }
-}
+        {this.protectedViews()}
+
+      </div>
+    );
+  };
+};
 
 export default App;

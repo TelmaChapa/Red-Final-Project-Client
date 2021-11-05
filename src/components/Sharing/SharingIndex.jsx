@@ -10,23 +10,23 @@ class SharingIndex extends React.Component {
           this.fetchImages = this.fetchImages.bind(this)
     }
     fetchImages = (event) => {
+        console.log(localStorage.getItem("token"))
         let token = localStorage.getItem("token");
         var myHeaders = new Headers();
         myHeaders.append("Authorization", token);
-
+                
         var requestOptions = {
-            method: 'GET',
-            Headers: myHeaders,
-            redirect: 'follow'
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
         };
-
-        fetch("http://localhost:3000/images/all", requestOptions)
-        .then(reponse => reponse,json())
-        .then(result => {
-            console.log(result)
-            this.setState({image: result})
-        })
-        .catch(error => console.log('error', error));
+        
+        fetch("http://localhost:3000/image/mine", requestOptions)
+          .then(response => response.json())
+          .then(result =>{
+            this.setState({images: result})
+            console.log(result)})
+          .catch(error => console.log('error', error));
     }
 
     componentDidMount() {
@@ -35,7 +35,7 @@ class SharingIndex extends React.Component {
     render() { 
         return (
             <div>
-             <SharingTable image = {this.state.image} />  
+             <SharingTable images = {this.state.images}fetchImages= {this.fetchImages}/>  
             </div>
           );
     }
