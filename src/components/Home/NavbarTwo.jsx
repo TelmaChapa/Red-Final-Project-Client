@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import {
   Modal,
   ModalHeader,
@@ -18,14 +18,12 @@ import {
   NavbarBrand,
 } from "reactstrap";
 import Login from "../Auth/Login";
-import vanillaBeans from "../assets/vanillaBeans.jpg";
 import { Link } from "react-router-dom";
 
-const LandingPage = (props) => {
+const NavbarTwo = (props) => {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
-
   return (
     <div>
       <Navbar
@@ -65,51 +63,14 @@ const LandingPage = (props) => {
                 </Button>
               </ModalFooter>
             </Modal>
-            <Link to="/Signup">
-              <Button color="yellow">SignUp</Button>
+            <Link to="/">
+              <Button color="yellow">Back</Button>
             </Link>
           </NavbarText>
         </Collapse>
       </Navbar>
-      <Jumbotron
-        style={{
-          backgroundColor: "#fffae5",
-          height: "600px",
-          width: "100%",
-          fontFamily: "Shadows Into Light, cursive",
-          fontSize: "60px",
-          color: "#292f36",
-          textAlign: "center",
-        }}
-      >
-        <hr className="my-1" />
-        <p>Vanilla Extract Journal</p>
-        <img
-          src={vanillaBeans}
-          height="500px"
-          width="900px"
-          // border-radius="18px"
-        />
-        <p className="lead"></p>
-      </Jumbotron>
-      <Card>
-        <CardBody
-          style={{ backgroundColor: "#fffae5", height: "90px", width: "100%" }}
-        >
-          <CardText
-            style={{
-              fontFamily: "Shadows Into Light, cursive",
-              fontSize: "35px",
-              textAlign: "center",
-            }}
-          >
-            Every Step of Homemade Vanilla Extract
-          </CardText>
-        </CardBody>
-      </Card>
     </div>
   );
 };
 
-
-export default LandingPage;
+export default NavbarTwo;
