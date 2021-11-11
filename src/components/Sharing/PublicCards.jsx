@@ -14,6 +14,16 @@ class PublicCards extends React.Component {
     super(props);
     this.state = {};
   }
+  deleteImage = (photos) => {
+    let token = localStorage.getItem("token");
+    fetch(`http://localhost:3000/image/delete/${photos.id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: token,
+      }),
+    }).then(() => this.props.fetchImages());
+  };
 
   sharingMapper = () => {
     return this.props.images.map((photos, index) => {
@@ -36,7 +46,16 @@ class PublicCards extends React.Component {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </CardText>
-
+              {localStorage.getItem("role") === "admin" ? (
+                <Button
+                  color="danger"
+                  onClick={() => {
+                    this.deleteImage(photos);
+                  }}
+                >
+                  Delete
+                </Button>
+              ) : null}
               {/* <Button>Button</Button> */}
             </CardBody>
           </Card>

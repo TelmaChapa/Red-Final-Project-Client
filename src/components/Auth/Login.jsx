@@ -33,6 +33,7 @@ class Login extends React.Component {
           .then((result) => {
             console.log(result);
             this.props.updateToken(result.sessionToken);
+            this.props.role(result.user.role);
           })
           .catch((error) => console.log("error", error));
       };

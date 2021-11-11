@@ -27,7 +27,7 @@ class Signup extends React.Component {
         username: this.state.username,
         email: this.state.email,
         passwordhash: this.state.password,
-        role: this.state.role,
+        role: "user"
       },
     });
     var requestOptions = {
@@ -41,6 +41,8 @@ class Signup extends React.Component {
       .then((result) => {
         console.log(result);
         this.props.updateToken(result.sessionToken);
+        this.props.role(result.user.role);
+        window.location.href = "/Home";
       })
       .catch((error) => console.log("error", error));
   };
@@ -80,14 +82,6 @@ class Signup extends React.Component {
               onChange={(e) => this.setState({ email: e.target.value })}
               name="email"
               value={this.state.email}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="role">Role</Label>
-            <Input
-              onChange={(e) => this.setState({ role: e.target.value })}
-              name="role"
-              value={this.state.role}
             />
           </FormGroup>
           <FormGroup>

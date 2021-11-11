@@ -57,7 +57,7 @@ const LandingPage = (props) => {
             >
               <ModalHeader toggle={toggle}>Login</ModalHeader>
               <ModalBody>
-                <Login updateToken={props.updateToken} />
+                <Login updateToken={props.updateToken} role={props.role} />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={toggle}>

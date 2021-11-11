@@ -20,6 +20,8 @@ import {
 import Login from "../Auth/Login";
 import { Link } from "react-router-dom";
 
+//  FOR SIGNUP
+
 const NavbarTwo = (props) => {
   const [modal, setModal] = useState(false);
 
@@ -55,7 +57,7 @@ const NavbarTwo = (props) => {
             >
               <ModalHeader toggle={toggle}>Login</ModalHeader>
               <ModalBody>
-                <Login updateToken={props.updateToken} />
+                <Login updateToken={props.updateToken} role={props.adminRole} />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={toggle}>

@@ -14,7 +14,10 @@ const Navigation = (props) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
-
+  let clearToken = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
   return (
     <div>
       <Navbar color="faded" light>
@@ -24,6 +27,11 @@ const Navigation = (props) => {
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} className="justify-content-end" navbar>
           <Nav navbar>
+            <NavItem>
+              <Link to="/Home">
+                <NavLink>Home</NavLink>
+              </Link>
+            </NavItem>
             <NavItem>
               <Link to="/">
                 <NavLink>My Extracts</NavLink>
@@ -48,6 +56,17 @@ const Navigation = (props) => {
               <Link to="/Public">
                 <NavLink>Photos</NavLink>
               </Link>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <button
+                  onClick={() => {
+                    clearToken();
+                  }}
+                >
+                  Log Out
+                </button>
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

@@ -12,6 +12,7 @@ import JournalCreate from './components/Journal/JournalCreate';
 import Navbar from "./components/Home/Navbar"
 import NavbarTwo from './components/Home/NavbarTwo';
 import Public from "./components/Sharing/Public";
+import LandingPageTwo from './components/Home/LandingPageTwo';
 
 
 
@@ -20,12 +21,17 @@ import Public from "./components/Sharing/Public";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { sessionToken: "" }
+    this.state = { sessionToken: "", role: "" }
   }
   updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
     this.setState({ sessionToken: newToken });
     console.log(this.state.sessionToken);
+  }
+  adminRole = (role) => {
+    localStorage.setItem("role", role);
+    this.setState({ role: role });
+    console.log(this.state.role);
   }
 
   componentDidMount() {
@@ -41,7 +47,7 @@ class App extends React.Component {
       </>
     )
       : (
-        <LandingPage updateToken={this.updateToken} />
+        <LandingPage updateToken={this.updateToken} role={this.adminRole} />
       )
   }
   // clearToken = () => {
@@ -61,8 +67,8 @@ class App extends React.Component {
             <JournalCreate sessionToken={this.state.sessionToken} />
           </Route>
           <Route exact path="/Signup">
-            <NavbarTwo updateToken={this.state.updateToken} />
-            <Signup updateToken={this.state.updateToken} />
+            <NavbarTwo updateToken={this.updateToken} />
+            <Signup updateToken={this.updateToken} role={this.adminRole} />
           </Route>
           <Route exact path="/SharingCreate">
             <Sharing sessionToken={this.state.sessionToken} />
@@ -72,6 +78,9 @@ class App extends React.Component {
           </Route>
           <Route exact path="/Public">
             <Public sessionToken={this.state.sessionToken} />
+          </Route>
+          <Route exact path="/Home">
+            <LandingPageTwo />
           </Route>
         </Switch>
       </div>
