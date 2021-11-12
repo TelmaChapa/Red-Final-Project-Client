@@ -33,7 +33,7 @@ class JournalTable extends React.Component {
           <td>{vanilla.enddate}</td>
           <td>{vanilla.overallresult}</td>
           <td>
-            <JournalEdit vanilla={vanilla} />
+            <JournalEdit vanilla={vanilla} fetchExtracts={this.props.fetchExtracts()} />
             <Button
               color="danger"
               onClick={() => {
@@ -52,7 +52,14 @@ class JournalTable extends React.Component {
     return (
       <div>
         <>
-          <h3>My Vanilla Extracts</h3>
+          <h3
+            style={{
+              fontFamily: "Shadows Into Light, cursive",
+              textAlign: "center",
+            }}
+          >
+            My Vanilla Extracts
+          </h3>
           <hr />
           <Table hoverable striped>
             <thead>

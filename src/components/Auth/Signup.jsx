@@ -49,7 +49,12 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundColor: "#b4a5a5",
+          fontFamily: "Shadows Into Light, cursive",
+        }}
+      >
         <h1>Sign Up</h1>
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>

@@ -19,7 +19,14 @@ const Navigation = (props) => {
     window.location.href = "/";
   };
   return (
-    <div>
+    <div
+      style={{
+        background: "linear-gradient(to bottom, white 0%, #b4a5a5 100%)",
+        fontFamily: "Shadows Into Light, cursive",
+        fontWeight: "bolder",
+      }}
+    >
+      {/* backgroundColor: "#b4a5a5", */}
       <Navbar color="faded" light>
         <NavbarBrand href="/" className="mr-auto">
           Vanilla Extract Journal
@@ -39,7 +46,7 @@ const Navigation = (props) => {
             </NavItem>
             <NavItem>
               <Link to="/JournalCreate">
-                <NavLink>New Batch</NavLink>
+                <NavLink>New Extract</NavLink>
               </Link>
             </NavItem>
             <NavItem>
@@ -54,7 +61,7 @@ const Navigation = (props) => {
             </NavItem>
             <NavItem>
               <Link to="/Public">
-                <NavLink>Photos</NavLink>
+                <NavLink>Gallery</NavLink>
               </Link>
             </NavItem>
             <NavItem>

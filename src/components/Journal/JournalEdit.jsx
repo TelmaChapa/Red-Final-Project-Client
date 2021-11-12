@@ -59,6 +59,8 @@ class JournalEdit extends React.Component {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
+        this.toggle();
+        this.props.fetchExtracts();
       })
       .catch((error) => console.log("error", error));
   };

@@ -51,9 +51,24 @@ class JournalCreate extends React.Component {
 
     render() { 
         return (
-            <div>
-            <h1>Journal</h1>
-            <Form onSubmit={this.handleSubmit}>
+          <div style={{ backgroundColor: "#b4a5a5" }}>
+            <h1
+              style={{
+                fontFamily: "Shadows Into Light, cursive",
+                textAlign: "center",
+                color: "#301b3f",
+              }}
+            >
+              New Extract
+            </h1>
+            <Form
+              style={{
+                background: "linear-gradient(to top, white 0%, #b4a5a5 100%)",
+                fontFamily: "Shadows Into Light, cursive",
+                textAlign: "center",
+              }}
+              onSubmit={this.handleSubmit}
+            >
               <FormGroup>
                 <Label htmlFor="beantype">Bean Type</Label>
                 <Input
@@ -65,7 +80,9 @@ class JournalCreate extends React.Component {
               <FormGroup>
                 <Label htmlFor="beanamount">Bean Amount</Label>
                 <Input
-                  onChange={(e) => this.setState({ beanamount: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ beanamount: e.target.value })
+                  }
                   name="beanamount"
                   value={this.state.beanamount}
                 />
@@ -73,7 +90,9 @@ class JournalCreate extends React.Component {
               <FormGroup>
                 <Label htmlFor="alcoholtype">Alcohol Type</Label>
                 <Input
-                  onChange={(e) => this.setState({ alcoholtype: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ alcoholtype: e.target.value })
+                  }
                   name="alcoholtype"
                   value={this.state.alcoholtype}
                 />
@@ -89,7 +108,9 @@ class JournalCreate extends React.Component {
               <FormGroup>
                 <Label htmlFor="alcoholamount">Alcohol Amount</Label>
                 <Input
-                  onChange={(e) => this.setState({ alcoholamount: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ alcoholamount: e.target.value })
+                  }
                   name="alcoholamount"
                   value={this.state.alcoholamount}
                 />
@@ -121,15 +142,17 @@ class JournalCreate extends React.Component {
               <FormGroup>
                 <Label htmlFor="overallresult">Overall Result</Label>
                 <Input
-                  onChange={(e) => this.setState({ overallresult: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ overallresult: e.target.value })
+                  }
                   name="overallresult"
                   value={this.state.overallresult}
                 />
               </FormGroup>
               <Button type="submit">Journal</Button>
             </Form>
-          </div> 
-          );
+          </div>
+        );
     }
 }
  

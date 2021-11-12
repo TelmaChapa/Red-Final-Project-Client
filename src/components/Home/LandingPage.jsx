@@ -18,7 +18,7 @@ import {
   NavbarBrand,
 } from "reactstrap";
 import Login from "../Auth/Login";
-import vanillaBeans from "../assets/vanillaBeans.jpg";
+import bottleOfVanillaExtract from "../assets/BottleOfVanillaExtract.jpg";
 import { Link } from "react-router-dom";
 
 const LandingPage = (props) => {
@@ -30,11 +30,12 @@ const LandingPage = (props) => {
     <div>
       <Navbar
         style={{
-          backgroundColor: "#fffae5",
+          // backgroundColor: "#b4a5a5",
+          background: "linear-gradient(to top, #b4a5a5 0%, #301b3f 100%)",
           fontFamily: "Shadows Into Light, cursive",
           fontWeight: "bold",
         }}
-        color="#fffae5"
+        color="#292f36"
         light
         expand="md"
       >
@@ -73,8 +74,8 @@ const LandingPage = (props) => {
       </Navbar>
       <Jumbotron
         style={{
-          backgroundColor: "#fffae5",
-          height: "600px",
+          backgroundColor: "#b4a5a5",
+          height: "700px",
           width: "100%",
           fontFamily: "Shadows Into Light, cursive",
           fontSize: "60px",
@@ -82,19 +83,32 @@ const LandingPage = (props) => {
           textAlign: "center",
         }}
       >
-        <hr className="my-1" />
-        <p>Vanilla Extract Journal</p>
+        <hr className="my-2" />
+        <p>VanJo</p>
         <img
-          src={vanillaBeans}
-          height="500px"
-          width="900px"
-          // border-radius="18px"
+          src={bottleOfVanillaExtract}
+          style={{
+            height: "500px",
+            width: "400px",
+            border: "11px solid #301b3f",
+            // borderImage:
+            // "linear-gradient(to right, purple 10%, black 100%) 100% 0 100% 0/2px 2px 2px 2px",
+            // padding: "30px",
+
+            // #301b3f
+            borderRadius: "35px",
+          }}
         />
         <p className="lead"></p>
       </Jumbotron>
       <Card>
         <CardBody
-          style={{ backgroundColor: "#fffae5", height: "90px", width: "100%" }}
+          style={{
+            // backgroundColor: "#b4a5a5",
+            background: "linear-gradient(to bottom, #b4a5a5 0%, #301b3f 100%)",
+            height: "120px",
+            width: "100%",
+          }}
         >
           <CardText
             style={{
@@ -103,10 +117,23 @@ const LandingPage = (props) => {
               textAlign: "center",
             }}
           >
-            Every Step of Homemade Vanilla Extract
+            A Vanilla Extract Journal
           </CardText>
         </CardBody>
       </Card>
+      <footer
+        style={{
+          width: "100%",
+          height: "40px",
+          position: "fixed",
+          bottom: "0",
+          background: "linear-gradient(to bottom, white 0%, #301b3f 100%)",
+          fontFamily: "Shadows Into Light, cursive",
+          textAlign: "center",
+        }}
+      >
+        © Telma Chapa 2021
+      </footer>
     </div>
   );
 };
