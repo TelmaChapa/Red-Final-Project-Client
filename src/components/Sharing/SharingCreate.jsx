@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 // import { Redirect } from "react-router-dom";
+import APIURL from "../../helpers/environment";
 
 class SharingCreate extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class SharingCreate extends React.Component {
       body: raw,
       redirect: "follow",
     };
-    fetch("http://localhost:3000/image/create", requestOptions)
+    fetch(`${APIURL}/image/create`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

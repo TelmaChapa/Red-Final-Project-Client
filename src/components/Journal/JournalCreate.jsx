@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from "react-router-dom";
+import APIURL from "../../helpers/environment";
 
 class JournalCreate extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class JournalCreate extends React.Component {
       body: raw,
       redirect: "follow",
     };
-    fetch("http://localhost:3000/extract/create", requestOptions)
+    fetch(`${APIURL}/extract/create`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

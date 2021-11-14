@@ -10,6 +10,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 class SharingEdit extends React.Component {
   constructor(props) {
@@ -40,10 +41,7 @@ class SharingEdit extends React.Component {
       body: raw,
       redirect: "follow",
     };
-    fetch(
-      `http://localhost:3000/sharing/update/${this.props.photos.id}`,
-      requestOptions
-    )
+    fetch(`${APIURL}/sharing/update/${this.props.photos.id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

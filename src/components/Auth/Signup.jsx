@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, FormGroup, Label, Input, Button, Container } from "reactstrap";
 
+
+
 //////Class Component/////
 
 class Signup extends React.Component {
@@ -36,7 +38,7 @@ class Signup extends React.Component {
       body: raw,
       redirect: "follow",
     };
-    fetch("http://localhost:3000/user/signup", requestOptions)
+    fetch(`${APIURL}/user/signup`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

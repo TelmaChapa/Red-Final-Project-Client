@@ -1,5 +1,6 @@
 import React from "react";
 import PublicCards from "./PublicCards";
+import APIURL from "../../helpers/environment";
 
 class Public extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class Public extends React.Component {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/image/all", requestOptions)
+    fetch(`${APIURL}/image/all`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         this.setState({ images: result });

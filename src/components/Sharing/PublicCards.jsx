@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 class PublicCards extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class PublicCards extends React.Component {
   }
   deleteImage = (photos) => {
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:3000/image/delete/${photos.id}`, {
+    fetch(`${APIURL}/image/delete/${photos.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

@@ -100,13 +100,13 @@ const LandingPage = (props) => {
           style={{
             height: "500px",
             width: "400px",
-            border: "11px solid #301B3F",
+            border: "11px solid #574F7D",
             // borderImage:
             // "linear-gradient(to right, purple 10%, black 100%) 100% 0 100% 0/2px 2px 2px 2px",
             // padding: "30px",
 
             // #301b3f
-            borderRadius: "35px",
+            borderRadius: "25px",
           }}
         />
         <p className="lead"></p>

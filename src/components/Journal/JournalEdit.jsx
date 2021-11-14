@@ -10,6 +10,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 class JournalEdit extends React.Component {
   constructor(props) {
@@ -52,10 +53,7 @@ class JournalEdit extends React.Component {
       body: raw,
       redirect: "follow",
     };
-    fetch(
-      `http://localhost:3000/extract/update/${this.props.vanilla.id}`,
-      requestOptions
-    )
+    fetch(`${APIURL}/extract/update/${this.props.vanilla.id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

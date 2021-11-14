@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
 import JournalEdit from "./JournalEdit";
+import APIURL from "../../helpers/environment";
 
 class JournalTable extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class JournalTable extends React.Component {
 
   deleteExtract = (vanilla) => {
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:3000/extract/delete/${vanilla.id}`, {
+    fetch(`${APIURL}/extract/delete/${vanilla.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
