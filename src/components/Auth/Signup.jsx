@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button, Container } from "reactstrap";
 
 //////Class Component/////
 
@@ -27,7 +27,7 @@ class Signup extends React.Component {
         username: this.state.username,
         email: this.state.email,
         passwordhash: this.state.password,
-        role: "user"
+        role: "user",
       },
     });
     var requestOptions = {
@@ -53,9 +53,10 @@ class Signup extends React.Component {
         style={{
           backgroundColor: "#b4a5a5",
           fontFamily: "Shadows Into Light, cursive",
+          color: "#301B3F",
         }}
       >
-        <h1>Sign Up</h1>
+        <h1 style={{ textAlign: "center" }}>Sign Up</h1>
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label htmlFor="username">Username</Label>

@@ -34,14 +34,15 @@ class PublicCards extends React.Component {
             <CardImg
               top
               width="100%"
-              src="/assets/318x180.svg"
-              alt="Card image cap"
+              src={photos.imageupload}
+              alt={photos.imageupload}
             />
             <CardBody>
               <CardTitle tag="h5">{photos.description}</CardTitle>
               <CardSubtitle tag="h6" className="mb-2 text-muted">
                 Card subtitle
               </CardSubtitle>
+              {/* *******************NEEDS FIXING**************** */}
               <CardText>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.

@@ -7,6 +7,7 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  Container,
 } from "reactstrap";
 
 class SharingTable extends React.Component {
@@ -31,34 +32,38 @@ class SharingTable extends React.Component {
       return (
         // DOUBLECHECK CARD
         <div>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src="/assets/318x180.svg"
-              alt="Card image cap"
-            />
-            <CardBody>
-              <CardTitle tag="h5">{photos.description}</CardTitle>
-              <CardSubtitle tag="h6" className="mb-2 text-muted">
+          <Container fluid="md">
+            <Card>
+              <CardImg
+                top
+                width="10px"
+                height="auto"
+                // objectFit="scale-down"
+                src={photos.imageupload}
+                alt="Card image cap"
+              />
+              <CardBody>
+                <CardTitle tag="h5">{photos.description}</CardTitle>
+                {/* <CardSubtitle tag="h6" className="mb-2 text-muted">
                 Card subtitle
               </CardSubtitle>
               <CardText>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
-              </CardText>
-              <Button
-                color="danger"
-                onClick={() => {
-                  this.deleteImage(photos);
-                }}
-              >
-                Delete
-              </Button>
+              </CardText> */}
+                <Button
+                  color="danger"
+                  onClick={() => {
+                    this.deleteImage(photos);
+                  }}
+                >
+                  Delete
+                </Button>
 
-              {/* <Button>Button</Button> */}
-            </CardBody>
-          </Card>
+                <Button>Update</Button>
+              </CardBody>
+            </Card>
+          </Container>
         </div>
       );
     });

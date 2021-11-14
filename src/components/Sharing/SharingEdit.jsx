@@ -110,4 +110,4 @@ class SharingEdit extends React.Component {
   }
 }
 
-export default SharinglEdit;
+export default SharingEdit;
