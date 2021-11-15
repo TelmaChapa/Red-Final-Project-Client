@@ -43,7 +43,7 @@ class Signup extends React.Component {
       .then((result) => {
         console.log(result);
         this.props.updateToken(result.sessionToken);
-        // this.props.role(result.user.role);
+        this.props.role(result.user.role);
         window.location.href = "/Home";
       })
       .catch((error) => console.log("error", error));
