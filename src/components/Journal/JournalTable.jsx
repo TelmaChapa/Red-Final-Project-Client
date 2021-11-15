@@ -70,10 +70,10 @@ class JournalTable extends React.Component {
               <tr>
                 <th>#</th>
                 <th>Bean Type</th>
-                <th>Bean Amount</th>
+                <th>Bean Amount(oz)</th>
                 <th>Alcohol Type</th>
                 <th>Proof</th>
-                <th>Alcohol Amount</th>
+                <th>Alcohol Amount(oz)</th>
                 <th>Container</th>
                 <th>Start Date</th>
                 <th>End Date</th>

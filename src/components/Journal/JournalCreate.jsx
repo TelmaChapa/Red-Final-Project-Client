@@ -93,7 +93,7 @@ class JournalCreate extends React.Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="beanamount">Bean Amount</Label>
+            <Label htmlFor="beanamount">Bean Amount(oz)</Label>
             <Input
               onChange={(e) => this.setState({ beanamount: e.target.value })}
               name="beanamount"
@@ -117,7 +117,7 @@ class JournalCreate extends React.Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="alcoholamount">Alcohol Amount</Label>
+            <Label htmlFor="alcoholamount">Alcohol Amount(oz)</Label>
             <Input
               onChange={(e) => this.setState({ alcoholamount: e.target.value })}
               name="alcoholamount"
