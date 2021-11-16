@@ -18,7 +18,8 @@ import {
   NavbarBrand,
 } from "reactstrap";
 import Login from "../Auth/Login";
-import bottleOfVanillaExtract from "../assets/BottleOfVanillaExtract.jpg";
+// import bottleOfVanillaExtract from "../assets/BottleOfVanillaExtract.jpg";
+import Beans from "../assets/Beans.jpg";
 import { Link } from "react-router-dom";
 
 const LandingPage = (props) => {
@@ -31,12 +32,12 @@ const LandingPage = (props) => {
       <Navbar
         style={{
           // backgroundColor: "#b4a5a5",
-          background: "linear-gradient(to top, white 0%, #b4a5a5 100%)",
+          background: "linear-gradient(to top, white 0%, #c99d8c 100%)",
           // #301b3f
           fontFamily: "Shadows Into Light, cursive",
           fontWeight: "bold",
         }}
-        color="#292f36"
+        // color="#292f36"
         light
         expand="md"
       >
@@ -70,20 +71,25 @@ const LandingPage = (props) => {
                 <Login updateToken={props.updateToken} role={props.role} />
               </ModalBody>
               <ModalFooter>
-                <Button color="secondary" onClick={toggle}>
+                <Button
+                style={{
+                  backgroundColor:"#c99d8c"
+                }}
+                 color="secondary" onClick={toggle}>
                   Cancel
                 </Button>
               </ModalFooter>
             </Modal>
             <Link to="/Signup">
-              <Button color="yellow">SignUp</Button>
+              <Button
+               color="yellow">SignUp</Button>
             </Link>
           </NavbarText>
         </Collapse>
       </Navbar>
       <Jumbotron
         style={{
-          backgroundColor: "#b4a5a5",
+          backgroundColor: "white",
           // background: "linear-gradient(to top, 301b3f 0%, white 100%)",
           height: "700px",
           width: "100%",
@@ -94,20 +100,24 @@ const LandingPage = (props) => {
         }}
       >
         <hr className="my-2" />
-        <p>VanJo</p>
+        <p>VanJou</p>
         <img
-          src={bottleOfVanillaExtract}
+          // src={bottleOfVanillaExtract}
+          src={Beans}
           style={{
             height: "500px",
-            width: "400px",
+            width: "700px",
             border: "11px solid #301B3F",
-            borderImage: "linear-gradient(45deg, #f6f6f6, #301B3F) 1",
+            borderImage: "linear-gradient(42deg, #c99d8c, #f8f8ec ) 1",
+            // #f6f0e0, #eac0a3
             // borderImage:
             // "linear-gradient(to right, purple 10%, black 100%) 100% 0 100% 0/2px 2px 2px 2px",
             // padding: "30px",
 
             // #301b3f
-            // borderRadius: "25px",
+            // borderRadius: "85px 25px",
+           
+
           }}
         />
         <p className="lead"></p>
@@ -116,7 +126,7 @@ const LandingPage = (props) => {
         <CardBody
           style={{
             // backgroundColor: "#b4a5a5",
-            background: "linear-gradient(to top, #b4a5a5 0%, white 100%)",
+            background: "linear-gradient(to top, #c99d8c 0%, white 100%)",
             height: "120px",
             width: "100%",
           }}
@@ -138,7 +148,8 @@ const LandingPage = (props) => {
           height: "40px",
           position: "fixed",
           bottom: "0",
-          background: "linear-gradient(to bottom, #FCF8EC 0%, #b4a5a5 100%)",
+          background: "linear-gradient(to bottom, white 0%, #c99d8c 100%)",
+          // #FCF8EC 0%, #b4a5a5
           fontFamily: "Shadows Into Light, cursive",
           textAlign: "center",
         }}

@@ -42,7 +42,14 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
+        <h1
+          style={{
+            fontFamily: "Shadows Into Light, cursive",
+            color: "#301B3F",
+          }}
+        >
+          Login
+        </h1>
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label htmlFor="email">Email</Label>
@@ -60,7 +67,14 @@ class Login extends React.Component {
               value={this.state.password}
             />
           </FormGroup>
-          <Button type="submit">Login</Button>
+          <Button
+            style={{
+              backgroundColor: "#3C415C",
+            }}
+            type="submit"
+          >
+            Login
+          </Button>
         </Form>
       </div>
     );

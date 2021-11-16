@@ -28,7 +28,13 @@ const Navigation = (props) => {
     >
       {/* backgroundColor: "#b4a5a5", */}
       <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">
+        <NavbarBrand
+          style={{
+            textAlign: "justify",
+          }}
+          href="/"
+          className="mr-auto"
+        >
           Vanilla Extract Journal
         </NavbarBrand>
         <NavbarToggler
@@ -39,35 +45,83 @@ const Navigation = (props) => {
           className="mr-2"
         />
         <Collapse isOpen={!collapsed} className="justify-content-end" navbar>
-          <Nav navbar>
+          <Nav
+            navbar
+            style={{
+              textAlign: "center",
+            }}
+          >
             <NavItem>
               <Link to="/Home">
-                <NavLink>Home</NavLink>
+                <NavLink
+                  style={{
+                    fontFamily: "Shadows Into Light, cursive",
+                    color: "#3f0071",
+                  }}
+                >
+                  Home
+                </NavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/">
-                <NavLink>My Extracts</NavLink>
+                <NavLink
+                  style={{
+                    fontFamily: "Shadows Into Light, cursive",
+                    color: "#3f0071",
+                  }}
+                >
+                  My Extracts
+                </NavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/JournalCreate">
-                <NavLink>New Extract</NavLink>
+                <NavLink
+                  style={{
+                    color: "#3f0071",
+                    fontFamily: "Shadows Into Light, cursive",
+                  }}
+                >
+                  New Extract
+                </NavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/SharingCreate">
-                <NavLink>Upload a Picture </NavLink>
+                <NavLink
+                  style={{
+                    fontFamily: "Shadows Into Light, cursive",
+                    color: "#3f0071",
+                  }}
+                >
+                  Upload a Picture{" "}
+                </NavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/SharingIndex">
-                <NavLink>My Pictures</NavLink>
+                <NavLink
+                  style={{
+                    fontFamily: "Shadows Into Light, cursive",
+                    color: "#3f0071",
+                  }}
+                >
+                  My Pictures
+                </NavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Public">
-                <NavLink>Gallery</NavLink>
+                <NavLink
+                  style={{
+                    fontFamily: "Shadows Into Light, cursive",
+                    color: "#3f0071",
+                    borderRadius: "25px",
+                  }}
+                >
+                  Gallery
+                </NavLink>
               </Link>
             </NavItem>
             <NavItem>
@@ -75,7 +129,8 @@ const Navigation = (props) => {
                 <button
                   style={{
                     fontFamily: "Shadows Into Light, cursive",
-                    color: "#3C415C",
+                    // color: "#3C415C",
+                    borderRadius: "65px",
                   }}
                   onClick={() => {
                     clearToken();

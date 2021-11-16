@@ -53,7 +53,8 @@ class Signup extends React.Component {
     return (
       <div
         style={{
-          backgroundColor: "#b4a5a5",
+          // background: "linear-gradient(to bottom, #6b34a2 0%, white 100%)",
+          backgroundColor: "white",
           fontFamily: "Shadows Into Light, cursive",
           color: "#301B3F",
         }}
@@ -100,7 +101,14 @@ class Signup extends React.Component {
               value={this.state.password}
             />
           </FormGroup>
-          <Button type="submit">Signup</Button>
+          <Button
+            style={{
+              backgroundColor: "#c99d8c",
+            }}
+            type="submit"
+          >
+            Signup
+          </Button>
         </Form>
       </div>
     );

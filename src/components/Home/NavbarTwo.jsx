@@ -30,7 +30,7 @@ const NavbarTwo = (props) => {
     <div>
       <Navbar
         style={{
-          backgroundColor: "#fffae5",
+          background: "linear-gradient(to bottom, #c99d8c 0%, white 100%)",
           fontFamily: "Shadows Into Light, cursive",
           fontWeight: "bold",
         }}

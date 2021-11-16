@@ -33,7 +33,7 @@ class PublicCards extends React.Component {
         <div>
           <Col
             style={{
-              padding: "2px",
+              padding: "1px",
             }}
           >
             <Card
