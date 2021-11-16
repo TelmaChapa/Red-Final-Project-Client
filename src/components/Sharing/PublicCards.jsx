@@ -7,6 +7,7 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  Col,
 } from "reactstrap";
 import APIURL from "../../helpers/environment";
 
@@ -29,38 +30,44 @@ class PublicCards extends React.Component {
   sharingMapper = () => {
     return this.props.images.map((photos, index) => {
       return (
-        // DOUBLECHECK CARD
         <div>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={photos.imageupload}
-              alt={photos.imageupload}
-            />
-            <CardBody>
-              <CardTitle tag="h5">{photos.description}</CardTitle>
-              <CardSubtitle tag="h6" className="mb-2 text-muted">
-                Card subtitle
-              </CardSubtitle>
-              {/* *******************NEEDS FIXING**************** */}
-              <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </CardText>
-              {localStorage.getItem("role") === "admin" ? (
-                <Button
-                  color="danger"
-                  onClick={() => {
-                    this.deleteImage(photos);
+          <Col
+            style={{
+              padding: "2px",
+            }}
+          >
+            <Card
+              style={{
+                backgroundColor: "#FAF3F3",
+                textAlign: "center",
+                fontFamily: "Shadows Into Light, cursive",
+              }}
+            >
+              <CardBody>
+                <CardText>{photos.description}</CardText>
+                <CardImg
+                  top
+                  // width="100%"
+                  style={{
+                    width: "11%",
                   }}
-                >
-                  Delete
-                </Button>
-              ) : null}
-              {/* <Button>Button</Button> */}
-            </CardBody>
-          </Card>
+                  src={photos.imageupload}
+                  alt={photos.imageupload}
+                />
+                {localStorage.getItem("role") === "admin" ? (
+                  <Button
+                    color="danger"
+                    onClick={() => {
+                      this.deleteImage(photos);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                ) : null}
+                {/* <Button>Button</Button> */}
+              </CardBody>
+            </Card>
+          </Col>
         </div>
       );
     });

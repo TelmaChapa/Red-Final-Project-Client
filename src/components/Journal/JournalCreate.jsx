@@ -65,7 +65,11 @@ class JournalCreate extends React.Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: "#b4a5a5" }}>
+      <div
+        style={{
+          backgroundColor: "#b4a5a5",
+        }}
+      >
         {this.renderRedirect()}
         <h1
           style={{
@@ -80,6 +84,7 @@ class JournalCreate extends React.Component {
           style={{
             background: "linear-gradient(to top, white 0%, #b4a5a5 100%)",
             fontFamily: "Shadows Into Light, cursive",
+            color: "#301b3f",
             textAlign: "center",
           }}
           onSubmit={this.handleSubmit}
@@ -156,7 +161,14 @@ class JournalCreate extends React.Component {
               value={this.state.overallresult}
             />
           </FormGroup>
-          <Button type="submit">Journal</Button>
+          <Button
+            style={{
+              backgroundColor: "#3C415C",
+            }}
+            type="submit"
+          >
+            Journal
+          </Button>
         </Form>
       </div>
     );

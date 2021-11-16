@@ -31,7 +31,13 @@ const Navigation = (props) => {
         <NavbarBrand href="/" className="mr-auto">
           Vanilla Extract Journal
         </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+        <NavbarToggler
+          style={{
+            color: "#301B3F",
+          }}
+          onClick={toggleNavbar}
+          className="mr-2"
+        />
         <Collapse isOpen={!collapsed} className="justify-content-end" navbar>
           <Nav navbar>
             <NavItem>
@@ -67,6 +73,10 @@ const Navigation = (props) => {
             <NavItem>
               <NavLink>
                 <button
+                  style={{
+                    fontFamily: "Shadows Into Light, cursive",
+                    color: "#3C415C",
+                  }}
                   onClick={() => {
                     clearToken();
                   }}

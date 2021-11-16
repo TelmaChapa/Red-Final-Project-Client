@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-// import { Redirect } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
+import { Redirect } from "react-router-dom";
 import APIURL from "../../helpers/environment";
 
 class SharingCreate extends React.Component {
@@ -18,11 +18,11 @@ class SharingCreate extends React.Component {
   //   this.setRedirect({ redirect: true });
   // };
 
-  // renderRedirect = () => {
-  //   if (this.state.redirect) {
-  //     return <Redirect to="/" />;
-  //   }
-  // };
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -47,34 +47,64 @@ class SharingCreate extends React.Component {
       .then((result) => {
         console.log(result);
         // this.setRedirect();
+        window.location.href = "/SharingIndex";
       })
       .catch((error) => console.log("error", error));
   };
 
   render() {
     return (
-      <div>
-        {/* {this.renderRedirect()} */}
-        <h1 style={{ fontFamily: "Shadows Into Light, cursive" }}>Sharing</h1>
-        <Form onSubmit={this.handleSubmit}>
-          <FormGroup>
-            <Label htmlFor="imageupload">Image Upload</Label>
-            <Input
-              onChange={(e) => this.setState({ imageupload: e.target.value })}
-              name="imageupload"
-              value={this.state.imageupload}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="description">Extract Description</Label>
-            <Input
-              onChange={(e) => this.setState({ description: e.target.value })}
-              name="description"
-              value={this.state.description}
-            />
-          </FormGroup>
-          <Button type="submit">Sharing</Button>
-        </Form>
+      <div
+        style={{
+          backgroundColor: "#F0E9D2",
+          padding: "100px",
+        }}
+      >
+        {this.renderRedirect()}
+        <Container
+          style={{
+            textAlign: "center",
+            fontFamily: "Shadows Into Light, cursive",
+            color: "#301B3F",
+            backgroundColor: "#F0E9D2",
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: "Shadows Into Light, cursive",
+              textAlign: "center",
+              color: "301B3F",
+            }}
+          >
+            Sharing
+          </h1>
+          <Form onSubmit={this.handleSubmit}>
+            <FormGroup>
+              <Label htmlFor="imageupload">Image Upload</Label>
+              <Input
+                onChange={(e) => this.setState({ imageupload: e.target.value })}
+                name="imageupload"
+                value={this.state.imageupload}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="description">Extract Description</Label>
+              <Input
+                onChange={(e) => this.setState({ description: e.target.value })}
+                name="description"
+                value={this.state.description}
+              />
+            </FormGroup>
+            <Button
+              style={{
+                backgroundColor: "#3C415C",
+              }}
+              type="submit"
+            >
+              Sharing
+            </Button>
+          </Form>
+        </Container>
       </div>
     );
   }

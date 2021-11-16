@@ -69,7 +69,15 @@ class JournalEdit extends React.Component {
     console.log(this.props.vanilla);
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+        <Button
+          // color="danger"
+          style={{
+            backgroundColor: "#3C415C",
+            fontFamily: "Shadows Into Light, cursive",
+            padding: "10px",
+          }}
+          onClick={this.toggle}
+        >
           Edit
         </Button>
         <Modal isOpen={this.state.modal} fade={false} toggle={this.toggle}>

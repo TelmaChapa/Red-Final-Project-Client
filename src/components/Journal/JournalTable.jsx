@@ -39,7 +39,10 @@ class JournalTable extends React.Component {
               fetchExtracts={this.props.fetchExtracts}
             />
             <Button
-              color="danger"
+              // color="danger"
+              style={{backgroundColor:"#D72323",
+              padding:"1px",
+              }}
               onClick={() => {
                 this.deleteExtract(vanilla);
               }}
@@ -59,6 +62,7 @@ class JournalTable extends React.Component {
           <h3
             style={{
               fontFamily: "Shadows Into Light, cursive",
+              color: "#301B3F",
               textAlign: "center",
             }}
           >
@@ -67,7 +71,12 @@ class JournalTable extends React.Component {
           <hr />
           <Table hoverable striped>
             <thead>
-              <tr>
+              <tr
+                style={{
+                  fontFamily: "Shadows Into Light, cursive",
+                  color: "#301B3F",
+                }}
+              >
                 <th>#</th>
                 <th>Bean Type</th>
                 <th>Bean Amount(oz)</th>

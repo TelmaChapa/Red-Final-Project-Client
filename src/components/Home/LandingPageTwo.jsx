@@ -11,7 +11,6 @@ const LandingPageTwo = () => {
           textAlign: "center",
           // backgroundColor: "#f638dc",
           background: "linear-gradient(to top, white 0%, #f638dc 100%)",
-          padding: "5px",
         }}
       >
         Welcome

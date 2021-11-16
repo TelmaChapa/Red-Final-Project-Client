@@ -1,6 +1,7 @@
 import React from "react";
 import PublicCards from "./PublicCards";
 import APIURL from "../../helpers/environment";
+import { CardGroup, Container, Row } from "reactstrap";
 
 class Public extends React.Component {
   constructor(props) {
@@ -37,10 +38,14 @@ class Public extends React.Component {
   render() {
     return (
       <div>
-        <PublicCards
-          images={this.state.images}
-          fetchImages={this.fetchImages}
-        />
+        <Container>
+          <Row>
+            <PublicCards
+              images={this.state.images}
+              fetchImages={this.fetchImages}
+            />
+          </Row>
+        </Container>
       </div>
     );
   }

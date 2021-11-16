@@ -17,11 +17,38 @@ class SharingEdit extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      imageupload: this.props.photos.imageupload,
-      description: this.props.photos.description,
+      imageupload: this.props.images.imageupload,
+      description: this.props.images.description,
       // public: this.props.photos.public,
     };
   }
+
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   let token = localStorage.getItem("token");
+  //   var myHeaders = new Headers();
+  //   myHeaders.append("Authorization", token);
+  //   myHeaders.append("Content-Type", "application/json");
+  //   var raw = JSON.stringify({
+      // imageupload: this.state.imageupload,
+      // description: this.state.description,
+  //     // public: this.state.public,
+  //   });
+
+  //   var requestOptions = {
+  //     method: "PUT",
+  //     headers: myHeaders,
+  //     body: raw,
+  //     redirect: "follow",
+  //   };
+  //   fetch(`${APIURL}/sharing/update/${this.props.images.id}`, requestOptions)
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //       this.toggle()
+  //     })
+  //     .catch((error) => console.log("error", error));
+  // };
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +59,6 @@ class SharingEdit extends React.Component {
     var raw = JSON.stringify({
       imageupload: this.state.imageupload,
       description: this.state.description,
-      // public: this.state.public,
     });
 
     var requestOptions = {
@@ -41,10 +67,12 @@ class SharingEdit extends React.Component {
       body: raw,
       redirect: "follow",
     };
-    fetch(`${APIURL}/sharing/update/${this.props.photos.id}`, requestOptions)
+    fetch(`${APIURL}/image/update/${this.props.images.id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
+        this.toggle();
+        this.props.fetchImages()
       })
       .catch((error) => console.log("error", error));
   };
@@ -52,10 +80,17 @@ class SharingEdit extends React.Component {
   toggle = () => this.setState({ modal: !this.state.modal });
 
   render() {
-    console.log(this.props.photos);
+    console.log(this.props.images);
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+        <Button 
+        // color="danger"
+        style={{
+          backgroundColor: "#3C415C",
+          fontFamily: "Shadows Into Light, cursive",
+          padding: "10px",
+        }}
+         onClick={this.toggle}>
           Edit
         </Button>
         <Modal isOpen={this.state.modal} fade={false} toggle={this.toggle}>
@@ -66,9 +101,9 @@ class SharingEdit extends React.Component {
               <FormGroup>
                 <Label htmlFor="upload">Photo</Label>
                 <Input
-                  onChange={(e) => this.setState({ upload: e.target.value })}
+                  onChange={(e) => this.setState({ imageupload: e.target.value })}
                   name="upload"
-                  value={this.state.upload}
+                  value={this.state.imageupload}
                 />
               </FormGroup>
               <FormGroup>
@@ -91,14 +126,25 @@ class SharingEdit extends React.Component {
                   value={this.state.public}
                 />
               </FormGroup> */}
-              <Button type="submit">Photo</Button>
+              <Button
+              // style={{
+              //   backgroundColor: "#blue",
+              //   fontFamily: "Shadows Into Light, cursive",
+              //   padding: "10px",
+              // }}
+               type="submit">Update</Button>
             </Form>
           </ModalBody>
           <ModalFooter>
             {/* <Button color="primary" onClick={this.toggle}>
               Do Something
             </Button>{" "} */}
-            <Button color="secondary" onClick={this.toggle}>
+            <Button 
+            // color="secondary"
+            style={{
+              fontFamily:"Shadows Into Light, cursive"
+            }}
+             onClick={this.toggle}>
               Cancel
             </Button>
           </ModalFooter>

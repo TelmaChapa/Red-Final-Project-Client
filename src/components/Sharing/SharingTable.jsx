@@ -7,9 +7,12 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  Col,
   Container,
+  CardFooter,
 } from "reactstrap";
 import APIURL from "../../helpers/environment";
+import SharingEdit from "./SharingEdit";
 
 class SharingTable extends React.Component {
   constructor(props) {
@@ -31,39 +34,54 @@ class SharingTable extends React.Component {
   sharingMapper = () => {
     return this.props.images.map((photos, index) => {
       return (
-        // DOUBLECHECK CARD
         <div>
           <Container fluid="md">
-            <Card>
-              <CardImg
-                top
-                width="10px"
-                height="auto"
-                // objectFit="scale-down"
-                src={photos.imageupload}
-                alt="Card image cap"
-              />
-              <CardBody>
-                <CardTitle tag="h5">{photos.description}</CardTitle>
-                {/* <CardSubtitle tag="h6" className="mb-2 text-muted">
-                Card subtitle
-              </CardSubtitle>
-              <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </CardText> */}
-                <Button
-                  color="danger"
-                  onClick={() => {
-                    this.deleteImage(photos);
-                  }}
-                >
-                  Delete
-                </Button>
-
-                <Button>Update</Button>
-              </CardBody>
-            </Card>
+            <Col>
+              <Card
+                style={{
+                  backgroundColor: "#FAF3F3",
+                  textAlign: "center",
+                  fontFamily: "Shadows Into Light, cursive",
+                }}
+              >
+                <CardBody>
+                  <CardText>{photos.description}</CardText>
+                  <CardImg
+                    top
+                    // width="10px"
+                    // height="auto"
+                    style={{
+                      width: "11%",
+                    }}
+                    src={photos.imageupload}
+                    // alt="Card image cap"
+                    alt={photos.imageupload}
+                  />
+                  <CardFooter
+                    style={{
+                      padding: "15px",
+                    }}
+                  >
+                    <SharingEdit
+                      images={photos}
+                      fetchImages={this.props.fetchImages}
+                    />
+                    <Button
+                      // color="danger"
+                      style={{
+                        backgroundColor: "#D72323",
+                        padding: "1px",
+                      }}
+                      onClick={() => {
+                        this.deleteImage(photos);
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  </CardFooter>
+                </CardBody>
+              </Card>
+            </Col>
           </Container>
         </div>
       );
